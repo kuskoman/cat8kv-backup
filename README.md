@@ -8,6 +8,8 @@ Backup and restore Cisco Cat8000v configuration via RESTCONF. Saves three predic
 
 Optionally commits changes to a local git repository, giving you a full history of configuration diffs.
 
+The project is currently designed to work with only one machine. If you need to manage multiple devices, you can run multiple instances of the tool with different `.env` files and backup directories and orchestrate them with a script or cron jobs.
+
 ## Requirements
 
 - Python 3.13+

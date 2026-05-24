@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import copy
 
 from cat8kv.client import RestconfClient

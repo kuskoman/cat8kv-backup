@@ -1,20 +1,16 @@
+#!/usr/bin/env python3
 import json
 import urllib3
 from pathlib import Path
 
 import requests
 
+from cat8kv.client import ENDPOINTS
 from cat8kv.config import load_config
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 FIXTURES_DIR = Path("tests/fixtures")
-
-ENDPOINTS = {
-    "native": "/restconf/data/Cisco-IOS-XE-native:native",
-    "hostname": "/restconf/data/Cisco-IOS-XE-native:native/hostname",
-    "interfaces": "/restconf/data/Cisco-IOS-XE-native:native/interface",
-}
 
 HEADERS = {"Accept": "application/yang-data+json"}
 
