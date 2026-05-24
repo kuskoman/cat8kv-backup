@@ -10,3 +10,6 @@ requires-python = ">=3.13"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["cat8kv*"]
+
+[project.scripts]
+cat8kv = "cat8kv.cli:cli"

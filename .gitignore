@@ -224,3 +224,6 @@ __marimo__/
 .env.*
 !.env.example
 
+# backup
+git-backups/
+backups

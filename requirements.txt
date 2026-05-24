@@ -1,6 +1,9 @@
 certifi==2026.5.20
 charset-normalizer==3.4.7
+click==8.4.1
 coverage==7.14.0
+gitdb==4.0.12
+GitPython==3.1.50
 idna==3.16
 iniconfig==2.3.0
 packaging==26.2
@@ -11,4 +14,5 @@ pytest-cov==7.1.0
 python-dotenv==1.2.2
 PyYAML==6.0.3
 requests==2.34.2
+smmap==5.0.3
 urllib3==2.7.0
