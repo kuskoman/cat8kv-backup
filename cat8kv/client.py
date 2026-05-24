@@ -50,6 +50,9 @@ class RestconfClient:
     def restore_config(self, config: dict) -> None:
         self.put("native", config)
 
+    def restore_interfaces(self, interfaces: dict) -> None:
+        self.put("interfaces", interfaces)
+
     def get_interfaces(self) -> dict:
         return self.get("interfaces")
 

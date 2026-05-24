@@ -14,8 +14,13 @@ def save(hostname: str, config: dict, interfaces: dict) -> Path:
     return BACKUPS_DIR
 
 
-def load(directory: Path) -> dict:
-    config_file = directory / "config.json"
-    if not config_file.exists():
-        raise FileNotFoundError(f"config.json not found in: {directory}")
-    return json.loads(config_file.read_text())
+def load(directory: Path) -> tuple[dict, dict, str]:
+    for name in ("config.json", "interfaces.json", "hostname.json"):
+        if not (directory / name).exists():
+            raise FileNotFoundError(f"{name} not found in: {directory}")
+
+    config = json.loads((directory / "config.json").read_text())
+    interfaces = json.loads((directory / "interfaces.json").read_text())
+    hostname = json.loads((directory / "hostname.json").read_text())["hostname"]
+
+    return config, interfaces, hostname

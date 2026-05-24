@@ -39,10 +39,11 @@ def restore(directory: Path) -> None:
     config = load_config()
     client = RestconfClient(config)
 
-    click.echo(f"Loading backup from: {directory}/config.json")
-    device_config = load(directory)
-    hostname = device_config["Cisco-IOS-XE-native:native"]["hostname"]
+    click.echo(f"Loading backup from: {directory}")
+    device_config, interfaces, hostname = load(directory)
 
     click.echo(f"Restoring configuration to: {hostname}")
     client.restore_config(device_config)
+    client.restore_interfaces(interfaces)
+    client.set_hostname(hostname)
     click.echo("[OK] Configuration restored")
